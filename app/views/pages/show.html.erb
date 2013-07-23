@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<h1><%= @page.name %></h1>
+
+<%= simple_format(@page.content) %>
+<br />
+<%= link_to 'Back', root_path %>
+<% if current_user %>
+	<%= link_to 'Edit', edit_page_path(@page) %> |
+<% end %>

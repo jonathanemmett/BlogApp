@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="well">
+	<ul class="nav">
+		<li>
+			<strong>Author:</strong>
+  			<%= @post.author %>
+		</li>
+		<li>
+			<strong>Intro:</strong>
+  			<%= @post.intro %>
+		</li>
+		<li>
+			<strong>Title:</strong>
+  			<%= @post.title %>
+		</li>
+	</ul>
+</div>
+<div class="span8">
+  <%= simple_format(@post.body) %>
+  <%= link_to 'Back', root_path %>
+<% if current_user %>
+	 | <%= link_to 'Edit', edit_post_path(@post) %>
+<% end %>
+</div>
+
+
