@@ -31,6 +31,26 @@ https://github.com/sferik/twitter .
 	  config.oauth_token_secret = YOUR_OAUTH_TOKEN_SECRET
 	end
 
+You will need to add your SMTP information on config/environments/development.rb:
+
+ 
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port:     "587",
+    domain: "Your Domain",
+    authentication: "plain",
+    enable_starttls_auto: "true",
+    user_name: "Your Email",
+    password:   "Your Password"
+  }
+
+And at app/mailers/site_contact.rb:
+
+	default to: "Your Email"
+
 # License
 
 No need for a license at all.  Fork it and have fun!  I will not be 
